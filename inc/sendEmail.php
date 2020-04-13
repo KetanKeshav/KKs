@@ -1,7 +1,7 @@
 ﻿<?php
 
 // Replace this with your own email address
-$ ketan.keshav7@gmial.com = 'https://ketankeshav.github.io/KKs/';
+$ketan.keshav7@gmail.com = 'https://ketankeshav.github.io/KKs/';
 
 
 if($_POST) {
@@ -46,8 +46,8 @@ if($_POST) {
 
    if (!$error) {
 
-      ini_set("sendmail_from", $ ketan.keshav7@gmial.com); // for windows server
-      $mail = mail($ ketan.keshav7@gmial.com, $subject, $message, $headers);
+      ini_set("sendmail_from", $ketan.keshav7@gmail.com); // for windows server
+      $mail = mail($ketan.keshav7@gmail.com, $subject, $message, $headers);
 
 		if ($mail) { echo "OK"; }
       else { echo "Something went wrong. Please try again."; }
