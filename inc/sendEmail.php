@@ -1,7 +1,7 @@
 ﻿<?php
 
 // Replace this with your own email address
-$ ketan.keshav7@gmial.com = 'user@website.com';
+$ ketan.keshav7@gmial.com = 'https://ketankeshav.github.io/KKs/';
 
 
 if($_POST) {
