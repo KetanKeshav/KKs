@@ -1,7 +1,7 @@
 ﻿<?php
 
 // Replace this with your own email address
-$ ketan.keshav7@gmial.com = 'https://ketankeshav.github.io/KKs/';
+$ketan.keshav7@gmial.com = 'https://ketankeshav.github.io/KKs/';
 
 
 if($_POST) {
@@ -29,7 +29,7 @@ if($_POST) {
 
    // Set Message
    $message .= "Email from: " . $name . "<br />";
-	$message .= "Email address: " . $email . "<br />";
+   $message .= "Email address: " . $email . "<br />";
    $message .= "Message: <br />";
    $message .= $contact_message;
    $message .= "<br /> ----- <br /> This email was sent from your site's contact form. <br />";
@@ -46,8 +46,8 @@ if($_POST) {
 
    if (!$error) {
 
-      ini_set("sendmail_from", $siteOwnersEmail); // for windows server
-      $mail = mail($siteOwnersEmail, $subject, $message, $headers);
+      ini_set("sendmail_from", $ketan.keshav7@gmial.com); // for windows server
+      $mail = mail($ketan.keshav7@gmial.com, $subject, $message, $headers);
 
 		if ($mail) { echo "OK"; }
       else { echo "Something went wrong. Please try again."; }
