@@ -31,6 +31,37 @@
    <!-- favicons
 	================================================== -->
 	<link rel="icon" type="image/png" href="favicon.png">
+  <script>
+    var config = {
+      apiKey: "AIzaSyDk2K6eEHNcRGO1l3t1_Qb-HYkdPNAdKcE",
+      authDomain: "ksitieee-b166b.firebaseapp.com",
+      databaseURL: "https://ksitieee-b166b.firebaseio.com",
+      projectId: "ksitieee-b166b",
+      storageBucket: "ksitieee-b166b.appspot.com",
+      messagingSenderId: "201240116840"
+    };
+    firebase.initializeApp(config);
+    var databaseRef = firebase.database().ref('/ieee');
+
+    function uploadFeedback() {
+      var email = document.getElementById("emailfeed");
+      var name = document.getElementById("namefeed");
+      var comment = document.getElementById("commentsfeed");
+
+      var objToPush = {
+        email: email.value,
+        name: name.value,
+        comment: comment.value
+      };
+      databaseRef.push().set(objToPush).then(()=>{
+        email.value = "";
+        name.value = "";
+        comment.value = "";
+        alert('Your feedback has been recorded');
+      }).catch(err=>alert(err));
+    }
+  </script>
+
 
 
 </head>
@@ -861,42 +892,24 @@ With the number of college fests, hackathons and IEEE events I have organised an
       			<fieldset>
 
                   <div class="form-field">
- 						   <input name="contactName" type="text" id="" placeholder="Name" value="" minlength="2" required="">
+ 						   <input name="contactName" type="text" id="namefeed" placeholder="Name" value="" minlength="2" required="">
                   </div>
                   <div class="form-field">
-	      			   <input name="contactEmail" type="email" id="" placeholder="Email" value="" required="">
+	      			   <input name="contactEmail" type="email" id="emailfeed" placeholder="Email" value="" required="">
 	               </div>
+                                         
                   <div class="form-field">
-	     				   <input name="contactSubject" type="text" id="" placeholder="Subject" value="">
-	               </div>                       
-                  <div class="form-field">
-	                 	<textarea name="contactMessage" id="" placeholder="message" rows="10" cols="50" required=""></textarea>
+	                 	<textarea name="contactMessage" id="commentsfeed" placeholder="message" rows="10" cols="50" required=""></textarea>
 	               </div>                      
                  <div class="form-field">
-                     <button class="submitform">Submit</button>
-                     <div id="submit-loader">
-                        <div class="text-loader">Sending...</div>                             
-       				      <div class="s-loader">
-								  	<div class="bounce1"></div>
-								  	<div class="bounce2"></div>
-								  	<div class="bounce3"></div>
-								</div>
-							</div>
+                   
+          <button class="submitform" type="submit" onclick="uploadFeedback()">Submit</button>
+        			
                   </div>
 
       			</fieldset>
       		</form> <!-- Form End -->
-
-            <!-- contact-warning -->
-            <div id="message-warning">            	
-            </div>            
-            <!-- contact-success -->
-      		<div id="message-success">
-               <i class="fa fa-check"></i>Your message was sent, thank you!<br>
-      		</div>
-
-         </div> <!-- /col-twelve -->
-   		
+		
    	</div> <!-- /contact-form -->
 
 
@@ -972,4 +985,34 @@ With the number of college fests, hackathons and IEEE events I have organised an
    <script src="js/plugins.js"></script>
    <script src="js/main.js"></script>
 </body>
+
+<script>
+$(document).ready(function(){
+
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {   
+    if (this.hash !== "") { 
+      event.preventDefault();
+      var hash = this.hash;
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        window.location.hash = hash;
+      });
+    } 
+  });
+  
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+</script>
+
 </html>
