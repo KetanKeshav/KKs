@@ -901,33 +901,43 @@ With the number of college fests, hackathons and IEEE events I have organised an
    	</div> <!-- /section-intro -->
 
    	<div class="row contact-form">
-
-   		<div class="col-twelve">
-
-            <!-- form -->
-            <form name="contactForm" id="" method="post" action="">
-      			<fieldset>
-
-                  <div class="form-field">
- 						   <input name="contactName" type="text" id="namefeed" placeholder="Name" value="" minlength="2" required="">
-                  </div>
-                  <div class="form-field">
-	      			   <input name="contactEmail" type="email" id="emailfeed" placeholder="Email" value="" required="">
-	               </div>
-                                         
-                  <div class="form-field">
-	                 	<textarea name="contactMessage" id="commentsfeed" placeholder="message" rows="10" cols="50" required=""></textarea>
-	               </div>                      
-                 <div class="form-field">
-                   
-          <button class="submitform" type="submit" onclick="uploadFeedback()">Submit</button>
-        			
-                  </div>
-
-      			</fieldset>
-      		</form> <!-- Form End -->
-		
-   	</div> <!-- /contact-form -->
+    <div class="container">
+    <div class="wrapper">
+  
+      <div class="contact">
+        <div class="alert">Your message has been sent</div>
+        <form id="contactForm">
+          <p>
+            <label>Name</label>
+            <input type="text" name="name" id="name" required>
+          </p>
+          <p>
+            <label>Company</label>
+            <input type="text" name="company" id="company">
+          </p>
+          <p>
+            <label>Email Address</label>
+            <input type="email" name="email" id="email" required>
+          </p>
+          <p>
+            <label>Phone Number</label>
+            <input type="text" name="phone" id="phone">
+          </p>
+          <p class="full">
+            <label>Message</label>
+            <textarea name="message" rows="5" id="message"></textarea>
+          </p>
+          <p class="full">
+		   <button class="submitform" type="submit">Submit</button>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+  <br><br>
+  <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+  <script src="main.js"></script>
+  <!-- END CONTACT  -->
 
 
    	<div class="row contact-info">

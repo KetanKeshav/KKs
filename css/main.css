@@ -756,20 +756,15 @@ button::-moz-focus-inner, input::-moz-focus-inner {
  * alert box - (_alert-box.scss)
  * -------------------------------------------------------------------
  */
-.alert-box {
-	padding: 2.1rem 4rem 2.1rem 3rem;
-	position: relative;
-	margin-bottom: 3rem;
-	border-radius: 3px;
-	font-family: "poppins-regular", sans-serif;
-	font-size: 1.5rem;
+.alert{
+	text-align: center;
+	padding:10px;
+	background:#FF0077;
+	color:#fff;
+	margin-bottom:10px;
+	display:none;
 }
-.alert-box .close {
-	position: absolute;
-	right: 1.8rem;
-	top: 1.8rem;
-	cursor: pointer;
-}
+
 .ss-error {
 	background-color: #ffd1d2;
 	color: #e65153;
@@ -2251,8 +2246,8 @@ header .logo a {
  */
 #contact {
 	background: #151515;
-	padding-top: 12rem;
-	padding-bottom: 7.2rem;
+	padding-top: 8rem;
+	padding-bottom: 5rem;
 }
 #contact .section-intro h1 {
 	color: white;
@@ -2336,7 +2331,7 @@ header .logo a {
 #contact input[type="text"],
 #contact input[type="password"],
 #contact input[type="email"] {
-	height: 6.6rem;
+	height: 0.5rem;
 	padding: 1.8rem 2rem;
 }
 #contact input[type="text"]:focus,
@@ -2346,7 +2341,7 @@ header .logo a {
 	color: #FFFFFF;
 }
 #contact textarea {
-	min-height: 20rem;
+	min-height: 3rem;
 	padding: 1.8rem 2rem;
 }
 #contact textarea:focus {
@@ -2595,5 +2590,6 @@ footer .copyright span:last-child::after {
 #go-top a:hover {
 	background: #000000;
 }
+
 
 /*# sourceMappingURL=main.css.map */
